@@ -8,9 +8,11 @@ toc_footers:
   - <a href='https://github.com/pearsonappeng/tensor'>Tensor</a>
 
 includes:
+  - users
+  - credentials
   - errors
 
-search: false
+search: true
 ---
 
 # Introduction
@@ -24,11 +26,11 @@ We have language bindings in Shell, Ruby, and Python! You can view code examples
 > To authorize, use this code:
 
 ```shell
-curl 
- -H "Accept: application/json"
- -H "Content-Type: application/json"
- -X POST 
- -d '{"username":"example","password":"example"}' http://{{url}}/v1/authtoken
+curl \
+ -H "Accept: application/json" \
+ -H "Content-Type: application/json" \
+ -X POST \
+ -d '{"username":"{{password}}","password":"{{password}}"}' 'http://{{url}}/v1/authtoken'
 ```
 
 > Make sure to replace `username` & `password` with your username & password.
@@ -37,21 +39,44 @@ Tensor uses JWT token to allow access to the API.
 
 ### HTTP Request
 
-`GET http://{{url}}/v1/authtoken`
+`POST http://{{url}}/v1/authtoken`
 
-### Request Body
+### Request Attributes
 
-Parameter | Default | Description
---------- | ------- | -----------
-username | "" | Username is required
-password | "" | Password is required
+Parameter | Type   | Default | Description
+--------- |------- | ------- | -----------
+username  | string | ""      | Username is required
+password  | string | ""      | Password is required
 
-### Response Body
+### Response Attributes
 
-Parameter | Description
---------- | -----------
-token | Username is required
+Parameter | Type   | Default | Description
+--------- | ------ | ------- | -----------
+token     | string |  -      | JWT token
 
 Tensor expects for the API key to be included in all API requests to the server in a header that looks like the following:
 
 `Authorization: token`
+
+## Refresh token
+
+> To get a refresh token, use this code:
+
+```shell
+curl \
+ -H "Accept: application/json" \
+ -H "Authorization: {{token}}" \
+ -X GET  'http://{{url}}/v1/authtoken'
+```
+
+> Make sure to replace `token` with your JWT token.
+
+### Request Attributes
+
+`GET http://{{url}}/v1/refresh_token`
+
+### Response Attributes
+
+Parameter | Type   | Default | Description
+--------- |------- | ------- | -----------
+token     | string | -       | JWT token
