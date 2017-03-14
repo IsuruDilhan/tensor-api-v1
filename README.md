@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/pearsonappeng/tensor-api-v1/source/images/logo.png?raw=true" alt="Tensor: API Documentation" width="226">
+  <img src="source/images/logo.png?raw=true" alt="Tensor: API Documentation" width="226">
   <br>
   <a href="https://travis-ci.org/pearsonappeng/tensor-api-v1"><img src="https://travis-ci.org/pearsonappeng/tensor-api-v1.svg?branch=master" alt="Build Status"></a>
 </p>
