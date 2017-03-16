@@ -11,6 +11,9 @@ includes:
   - users
   - credentials
   - errors
+  - organizations
+  - projects
+  - teams
 
 search: true
 ---
