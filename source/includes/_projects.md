@@ -214,4 +214,4 @@ curl \
 ```
 ### HTTP Request
 
-`DELTE http://{{url}}/v1/Projects/{{Project_id}}`
+`DELETE http://{{url}}/v1/Projects/{{Project_id}}`

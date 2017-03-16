@@ -172,8 +172,8 @@ modified | Timestamp | -        | UTC timestamp
 curl \
  -H "Accept: application/json" \
  -H "Authorization: {{token}}" \
- -X DELTE 'http://{{url}}/v1/credentials/{{credential_id}}'
+ -X DELETE 'http://{{url}}/v1/credentials/{{credential_id}}'
 ```
 ### HTTP Request
 
-`DELTE http://{{url}}/v1/credentials/{{credential_id}}`
+`DELETE http://{{url}}/v1/credentials/{{credential_id}}`
